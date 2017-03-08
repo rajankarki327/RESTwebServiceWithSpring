@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import spring.rest.dao.BookDao;
-import spring.rest.model.BookModel;
+import spring.rest.model.Book;
 
 @Service
 public class BookService {
@@ -18,21 +18,23 @@ public class BookService {
 		this.bookDao = bookDao;
 	}
 
-	public void addBook(BookModel book){
+	public void addBook(Book book){
 		this.bookDao.addBook(book);
 	}
 	
-	public List<BookModel> getAllBook(){
+	public List<Book> getAllBook(){
 		return this.bookDao.getAllBook();
 	}
+	
 	public void deleteBook(int id){
 		this.bookDao.deleteBook(id);
 	}
 	
-	public void editBook(BookModel bookModel){
+	public void editBook(Book bookModel){
 		this.bookDao.editBook(bookModel);
 	}
-	public BookModel findById(int id){
+	public Book findById(int id){
 		return this.bookDao.findById(id);
 	}
+	
 }
